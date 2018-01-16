@@ -12,7 +12,7 @@ if [ -n "$container" ];then
      fi
      images=$(docker images | awk '{print $3}' | sed '1d')
      if [ -n "$images" ];then
-         docker rm $images
+         docker rmi $images
      fi
 
 else 
@@ -26,7 +26,7 @@ else
      fi
      images=$(docker images | awk '{print $3}' | sed '1d')
      if [ -n "$images" ];then
-         docker rm $images
+         docker rmi $images
      fi
 fi
 
