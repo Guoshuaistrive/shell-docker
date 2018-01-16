@@ -9,7 +9,9 @@ if [ -n "$container" ];then
          
 else 
      net=$(docker network ls | awk '{print $2}' | sed '1d' | grep -v 'bridge' | grep -v 'host' | grep -v 'none')
-     docker network rm $net
+     if [ -n "$net" ];then
+         docker network rm $net
+     fi
 fi
 
 
