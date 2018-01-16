@@ -15,7 +15,6 @@ if [ -n "$container" ];then
          docker rm $images
      fi
 
-     docker rmi $images     
 else 
      net=$(docker network ls | awk '{print $2}' | sed '1d' | grep -v 'bridge' | grep -v 'host' | grep -v 'none')
      if [ -n "$net" ];then

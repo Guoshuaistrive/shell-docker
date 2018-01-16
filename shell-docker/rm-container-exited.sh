@@ -1,3 +1,6 @@
 #!/bin/bash
-container=$(docker ps -a | awk '{print $1}' | sed '1d')
-docker rm $container
+gg=$(docker ps -a | awk '{print $1}' | sed '1d')
+    if [ -n "$gg" ];then
+         docker rm $gg
+    fi
+
